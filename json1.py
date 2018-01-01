@@ -7,6 +7,8 @@
  @license: http://data.gc.ca/eng/open-government-licence-canada
 """
 import json
+
+import re
 import requests
 import urllib.request
 
@@ -17,4 +19,13 @@ with urllib.request.urlopen(url) as url:
     #print(data['data'][0], data['data'][1])
 
 for x in data['data']:
-    print(x[7])
+    print(x[7], x[9])
+
+for d in data['data']:
+    str1 = d[1]
+    match = re.search(r'nova', str1)
+    # If-statement after search() tests if it succeeded
+    if match:
+        print('found', match.group()) ## 'found word:cat'
+    else:
+        print('did not find')

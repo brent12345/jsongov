@@ -7,8 +7,10 @@ import json
 import re
 import requests
 import urllib.request
+from decimal import *
 
 url = "https://data.novascotia.ca/api/views/7dfb-h4nw/rows.json?accessType=DOWNLOAD"
+count = 0
 
 with urllib.request.urlopen(url) as url:
     data = json.loads(url.read().decode())
@@ -26,5 +28,10 @@ for d in data['data']:
              #print(match.string)
     #else:
             #pass
-    if int(str1) > 12:
-        print('found')
+    if str1 is not None:
+        if Decimal(str1) > 50:
+            count += 1
+            print('found')
+
+ 
+print(count)

@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{f9b1e2be-7aaa-460f-85ec-a834130e3995}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>json1.py</StartupFile>
+    <StartupFile>class1.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -21,27 +21,13 @@
     <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="class1.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="json1.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="{7e9a5980-a52f-4e9d-b696-3d085ac032fb}\3.5" />
-  </ItemGroup>
-  <ItemGroup>
-    <Interpreter Include="venv\">
-      <Id>{d4cdd5ee-4533-4551-a10f-740938cc67b1}</Id>
-      <Description>venv</Description>
-      <BaseInterpreter>{00000000-0000-0000-0000-000000000000}</BaseInterpreter>
-      <InterpreterPath>
-      </InterpreterPath>
-      <WindowsInterpreterPath>
-      </WindowsInterpreterPath>
-      <LibraryPath>Lib\</LibraryPath>
-      <Version>0.0</Version>
-      <Architecture>
-      </Architecture>
-      <PathEnvironmentVariable>
-      </PathEnvironmentVariable>
-    </Interpreter>
   </ItemGroup>
   <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
